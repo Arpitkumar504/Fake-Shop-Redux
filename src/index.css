@@ -1,0 +1,21 @@
+@import url('https://fonts.googleapis.com/css2?family=Lobster+Two:wght@700&family=Pacifico&family=Poppins:wght@300&display=swap');
+
+:root {
+  --first: 'Pacifico', cursive;
+  --second: 'Poppins', sans-serif;
+  --third: 'Lobster Two', cursive;
+  --lightmodeback: white;
+  --lightmodecolor: #1d1d1d;
+  --footergradiant: linear-gradient(90deg, #efd5ff 0%, #515ada 100%);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: var(--second);
+}
+
+body {
+  position: relative;
+}
