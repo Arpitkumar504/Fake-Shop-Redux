@@ -1,12 +1,12 @@
 import React, { useEffect } from 'react'
 import axios from 'axios'
-import { useDispatch, useSelector } from 'react-redux'
+import { useDispatch } from 'react-redux'
 import { setproduct } from '../redux/action/productaction';
+import Products from '../component/Products';
 
 const Home = () => {
     const api = "https://fakestoreapi.com/products";
     const dispatch = useDispatch();
-    const datas = useSelector((state) => state.product.products);
     const getproducts = async (url) => {
         try {
             const data = await axios.get(url);
@@ -20,7 +20,8 @@ const Home = () => {
         getproducts(api);
     }, [])
     return (
-        <div>
+        <div className='container'>
+            <Products />
         </div>
     )
 }
