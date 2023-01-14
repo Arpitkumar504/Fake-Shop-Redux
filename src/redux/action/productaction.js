@@ -4,3 +4,10 @@ export const setproduct = (data) => {
         payload: data,
     }
 }
+
+export const setsingledata = (singledata) => {
+    return {
+        type: "setsingledata",
+        payload: singledata,
+    }
+}

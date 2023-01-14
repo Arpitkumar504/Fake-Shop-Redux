@@ -4,7 +4,6 @@ import Card from './Card';
 
 const Products = () => {
     const data = useSelector((state) => state.product.products);
-    console.log(data);
     return (
         <div className='productlist'>
             {

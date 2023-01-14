@@ -28,6 +28,15 @@ body {
   flex-wrap: wrap;
 }
 
+.productlist a {
+  color: black;
+}
+
+.productlist a:link {
+  text-decoration: none;
+  color: black;
+}
+
 .card {
   width: 250px;
   background-color: #f3f3f3 !important;
@@ -68,4 +77,63 @@ body {
 
 .card .content .reviews h5 {
   margin: 0;
+}
+
+@media(max-width:576px) {
+  .productlist {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+/* singlepage section */
+.singleproduct {
+  display: flex;
+  justify-content: space-between;
+  padding: 30px 10px;
+}
+
+.singleproduct div {
+  width: 50%;
+}
+
+.singleproduct .image {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.singleproduct .image img {
+  width: 300px;
+  height: 400px;
+}
+
+.singleproduct .title {
+  font-size: 25px;
+  font-weight: bold;
+}
+
+.singleproduct span {
+  font-weight: bold;
+}
+
+.singleproduct p {
+  text-align: justify;
+}
+
+@media(max-width:768px) {
+  .singleproduct {
+    display: block;
+  }
+
+  .singleproduct div {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .singleproduct .image img {
+    width: 100%;
+    height: 400px;
+  }
 }
