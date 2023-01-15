@@ -20,6 +20,288 @@ body {
   position: relative;
 }
 
+/* Header section */
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header .logo {
+  padding: 5px 20px;
+}
+
+.header .logo img {
+  width: 40px;
+  height: 40px;
+}
+
+.header .navbar {
+  padding: 0;
+  margin-right: 50px;
+}
+
+.header .navbar .navlist {
+  display: flex;
+  align-items: center;
+  margin: 0;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.header .navbar .navlist li {
+  list-style-type: none;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.header .navbutton {
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  display: none;
+}
+
+.header .navbutton .navbtn {
+  width: 40px;
+  height: 40px;
+}
+
+.header a:link {
+  text-decoration: none;
+}
+
+@media(max-width:576px) {
+  .header {
+    position: relative;
+  }
+
+  .header .navbutton {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 1;
+  }
+
+  .header .navbutton .navbtn.close {
+    display: none;
+  }
+
+  .header .navbar {
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #f3f3f3;
+    z-index: 1;
+    display: none;
+  }
+
+  .header .navlist {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+    gap: 50px !important;
+  }
+
+  .header.active .navbar {
+    display: flex;
+    justify-content: center;
+    animation: animatenavbar 0.5s ease;
+  }
+
+  @keyframes animatenavbar {
+    0% {
+      transform: translateX(500px);
+    }
+  }
+
+  .header.active .navbutton .navbtn.close {
+    display: block;
+    animation: closeanimation 0.5s ease;
+  }
+
+  @keyframes closeanimation {
+    0% {
+      transform: rotate(90deg);
+    }
+  }
+
+  .header.active .navbutton .navbtn.open {
+    display: none;
+  }
+
+  .header.active .navbutton {
+    position: fixed;
+    top: 0;
+    right: 10px;
+  }
+
+  .content h1 {
+    font-size: 10px;
+  }
+}
+
+/* footer section */
+.footercontent {
+  background-color: #f3f3f3;
+}
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding: 10px 5px;
+}
+
+.footer .heading {
+  height: 50px;
+}
+
+.footer .footerdiv {
+  width: 300px;
+
+}
+
+.footer .info {
+  padding-left: 10px;
+}
+
+.footer .heading h5 {
+  font-weight: bold;
+  font-size: 22px;
+  margin: 0;
+}
+
+.footer p {
+  font-size: 16px;
+}
+
+.footer .social .socialicons {
+  display: flex;
+  justify-content: flex-start;
+  gap: 20px;
+}
+
+.footer .social .socialicons .icon {
+  font-size: 30px;
+}
+
+.footer .contact h5 {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.footer .inputs {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border: 2px solid black;
+  border-radius: 10px;
+  width: 250px;
+}
+
+.footer input {
+  background-color: #f3f3f3;
+  outline: none;
+  border: none;
+  width: 100%;
+  font-size: 20px;
+  margin-left: 10px;
+}
+
+.footer .inputs .icon {
+  width: 30px;
+  height: 30px;
+  margin-right: 10px;
+}
+
+.copyright {
+  width: 100%;
+  padding: 10px;
+  text-align: center;
+  font-size: 8px;
+  font-weight: bold;
+  background-color: #1d1d1d;
+  color: #f3f3f3;
+}
+
+.copyright h1 {
+  font-size: 15px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  margin: 0;
+}
+
+@media(max-width:576px) {
+  .footer .footerdiv {
+    margin: 0 auto;
+    margin-bottom: 20px;
+  }
+}
+
+/* Nopage section */
+.nopage {
+  margin-bottom: 50px;
+}
+
+.box {
+  width: 100%;
+  height: 500px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.box h1 {
+  color: #1d1d1d;
+  font-size: 40px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.nopageicons {
+  font-size: 50px;
+}
+
+.nopagebtn {
+  margin: 0 auto;
+  display: block;
+  padding: 8px 20px;
+  font-weight: bold;
+  font-size: 20px;
+  background-color: #1d1d1d;
+  color: #f3f3f3;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.5s ease;
+}
+
+.nopagebtn:hover {
+  transform: scale(1.1);
+}
+
+.nopagelink:hover {
+  text-decoration: none;
+  margin: 0;
+}
+
+@media(max-width:576px) {
+  .nopage h1 {
+    font-size: 25px;
+  }
+}
+
 /* card section */
 .productlist {
   display: flex;
