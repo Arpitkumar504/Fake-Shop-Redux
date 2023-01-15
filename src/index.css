@@ -482,6 +482,10 @@ body {
   text-align: justify;
 }
 
+.singleproduct .reviews {
+  width: 100%;
+}
+
 @media(max-width:768px) {
   .singleproduct {
     display: block;
