@@ -7,6 +7,8 @@ import Singleproduct from './page/Singleproduct.js';
 import Header from './component/Header.js';
 import Footer from './component/Footer.js';
 import Contact from './page/Contact.js';
+import About from './page/About.js';
+import Product from './page/Product.js';
 
 const App = () => {
   return (
@@ -16,6 +18,8 @@ const App = () => {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path='/singleproduct/:id' element={<Singleproduct />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/product" element={<Product />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="*" element={<Nopage />} />
         </Routes>
