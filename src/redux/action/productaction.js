@@ -11,3 +11,23 @@ export const setsingledata = (singledata) => {
         payload: singledata,
     }
 }
+
+export const setfilterproducts = (data) => {
+    return {
+        type: "setfilter",
+        payload: data,
+    }
+}
+
+export const sorting = (value) => {
+    return {
+        type: "setsorting",
+        payload: value,
+    }
+}
+
+export const sortdata = () => {
+    return {
+        type: "sortproduct"
+    }
+}

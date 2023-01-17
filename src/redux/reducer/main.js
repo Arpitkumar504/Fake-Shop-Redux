@@ -1,7 +1,8 @@
 import { combineReducers } from 'redux';
-import { product } from './productreducer';
+import { product, filterproduct } from './productreducer';
 
 const rootcombine = combineReducers({
     product,
+    filterproduct,
 })
 export default rootcombine;
