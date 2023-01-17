@@ -624,3 +624,8 @@ body {
   font-size: 20px;
   font-weight: bold;
 }
+
+.product .sortproduct button.active {
+  background-color: #1d1d1d;
+  color: #f3f3f3;
+}

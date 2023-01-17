@@ -65,9 +65,31 @@ export const filterproduct = (state = filterdata, action) => {
                     b.price - a.price
                 );
             }
+            if (state.sortingvalue === 'ratinglow') {
+                newdata = temp.sort((a, b) =>
+                    a.rating.rate - b.rating.rate
+                );
+            }
+            if (state.sortingvalue === 'ratinghigh') {
+                newdata = temp.sort((a, b) =>
+                    b.rating.rate - a.rating.rate
+                );
+            }
             return {
                 ...state,
                 filterproduct: newdata,
+            }
+        }
+        case "grid": {
+            return {
+                ...state,
+                gridview: true,
+            }
+        }
+        case "list": {
+            return {
+                ...state,
+                gridview: false,
             }
         }
         default:

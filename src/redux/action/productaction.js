@@ -31,3 +31,15 @@ export const sortdata = () => {
         type: "sortproduct"
     }
 }
+
+export const gridview = () => {
+    return {
+        type: "grid"
+    }
+}
+
+export const listview = () => {
+    return {
+        type: "list"
+    }
+}
