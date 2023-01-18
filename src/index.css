@@ -629,3 +629,62 @@ body {
   background-color: #1d1d1d;
   color: #f3f3f3;
 }
+
+.listview .listdata {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  background-color: #f3f3f3 !important;
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
+
+.listview .listdata .image {
+  width: 250px !important;
+  height: 220px !important;
+  background-color: #f3f3f3 !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5px;
+  border-radius: 10px;
+}
+
+.listview .listdata .content {
+  width: 100%;
+}
+
+.listview .listdata .image img {
+  background-color: #f3f3f3 !important;
+  width: 220px !important;
+  height: 200px !important;
+}
+
+.listview .listdata .content {
+  padding: 5px !important;
+}
+
+.listview .listdata .reviews {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.listview .listdata h5 {
+  font-size: 20px;
+  font-weight: bold;
+  color: black;
+}
+
+.listview .listdata p {
+  color: black;
+}
+
+.listview {
+  margin-top: 20px;
+}
+
+.listview a:link {
+  color: black;
+  text-decoration: none;
+}

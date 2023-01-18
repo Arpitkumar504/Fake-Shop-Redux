@@ -2,6 +2,7 @@ import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { sortdata } from '../redux/action/productaction';
 import Grid from './Grid';
+import List from './List';
 
 const Productitem = () => {
     const griddata = useSelector((state) => state.filterproduct.gridview);
@@ -16,6 +17,11 @@ const Productitem = () => {
     if (griddata) {
         return (
             <Grid product={filterdata} />
+        )
+    }
+    if (!griddata) {
+        return (
+            <List product={filterdata} />
         )
     }
 }
