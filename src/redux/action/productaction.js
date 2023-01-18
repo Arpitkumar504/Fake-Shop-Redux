@@ -43,3 +43,20 @@ export const listview = () => {
         type: "list"
     }
 }
+
+export const updatevalue = (e) => {
+    const { name, value } = e;
+    return {
+        type: "setvalue",
+        payload: {
+            names: name,
+            values: value,
+        }
+    }
+}
+
+export const filterdatas = () => {
+    return {
+        type: "filterproduct",
+    }
+}

@@ -11,8 +11,10 @@ const Product = () => {
     const dispatch = useDispatch();
     useEffect(() => {
         dispatch(setfilterproducts(products));
+    }, [products])
+    useEffect(() => {
         dispatch(sortdata());
-    }, [products, sort])
+    }, [sort])
     return (
         <div className='container product'>
             <div className="filterproduct">

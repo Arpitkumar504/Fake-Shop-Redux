@@ -1,5 +1,4 @@
 import React from 'react'
-import { MdProductionQuantityLimits } from 'react-icons/md'
 import { Link } from 'react-router-dom';
 import FormatPrice from './Formatprice';
 import Star from './Star';
@@ -11,7 +10,7 @@ const List = ({ product }) => {
                 product.map(element => {
                     const { id, title, price, image, description, rating: { rate } } = element;
                     return (
-                        <Link to={`/singleproduct/${id}`}>
+                        <Link to={`/singleproduct/${id}`} key={id}>
                             <div className="listdata" key={id}>
                                 <div className="image">
                                     <img src={image} alt="#" />

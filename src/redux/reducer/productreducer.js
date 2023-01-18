@@ -26,6 +26,10 @@ const filterdata = {
     filterproduct: [],
     gridview: true,
     sortingvalue: "lowest",
+    filter: {
+        name: "",
+        category: "all",
+    },
 }
 export const filterproduct = (state = filterdata, action) => {
     switch (action.type) {
@@ -90,6 +94,34 @@ export const filterproduct = (state = filterdata, action) => {
             return {
                 ...state,
                 gridview: false,
+            }
+        }
+        case "setvalue": {
+            const { names, values } = action.payload;
+            return {
+                ...state,
+                filter: {
+                    ...state.filter,
+                    [names]: [values],
+                }
+            }
+        }
+        case "filterproduct": {
+            let data = [...state.alldata];
+            const { name, category } = state.filter;
+            if (name) {
+                data = data.filter(element => {
+                    return element.title.toLowerCase().includes(name);
+                })
+            }
+            if (category != "all") {
+                data = data.filter(element => {
+                    return element.category == category;
+                })
+            }
+            return {
+                ...state,
+                filterproduct: data,
             }
         }
         default:
