@@ -2,7 +2,7 @@ import React from 'react'
 import TextField from '@mui/material/TextField';
 import Slider from '@mui/material/Slider';
 import Box from '@mui/material/Box';
-import Star from './Star';
+import Rating from '@mui/material/Rating';
 import { FaSearch } from 'react-icons/fa'
 import { useDispatch, useSelector } from 'react-redux';
 import { updatevalue, rating, clearfilter } from '../redux/action/productaction';
@@ -15,6 +15,7 @@ const Filterproduct = () => {
   const price = useSelector((state) => state.filterproduct.filter.price);
   const minprice = useSelector((state) => state.filterproduct.filter.min);
   const maxprice = useSelector((state) => state.filterproduct.filter.max);
+  const ratingdata = useSelector((state) => state.filterproduct.ratingdata);
   const getfilterproducts = (data, property) => {
     let newdata = data.map((element) => {
       return element[property];
@@ -55,8 +56,8 @@ const Filterproduct = () => {
           {
             Array.from({ length: 5 }, (element, indexes) => {
               return (
-                <div className="rate" key={indexes} onClick={() => dispatch(rating(indexes + 1))}>
-                  <Star stars={indexes + 1} />
+                <div key={indexes} className="rate" onClick={() => dispatch(rating(indexes + 1))}>
+                  <Rating name="half-rating-read" defaultValue={indexes + 1} precision={0.5} readOnly className={indexes + 1 == ratingdata ? "active" : ""} />
                 </div>
               )
             })

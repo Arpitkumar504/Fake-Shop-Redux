@@ -249,6 +249,49 @@ body {
   }
 }
 
+/* Gototop section */
+.top {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #1d1d1d;
+  color: #f3f3f3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 1;
+  position: fixed;
+  right: 30px;
+  bottom: 40px;
+  transition: 0.5s ease;
+}
+
+.top:hover {
+  background-color: #f3f3f3;
+  color: #1d1d1d;
+  border: 2px solid black;
+}
+
+.top .icon {
+  font-size: 25px;
+  animation: top 1s infinite;
+}
+
+@keyframes top {
+  0% {
+    transform: translateY(4px);
+  }
+
+  50% {
+    transform: translateY(-4px);
+  }
+
+  100% {
+    transform: translateY(4px);
+  }
+}
+
 /* Nopage section */
 .nopage {
   margin-bottom: 50px;
@@ -727,6 +770,14 @@ body {
 
 .filterproduct .rating .rate {
   cursor: pointer;
+}
+
+.filterproduct .rating .rate .active {
+  background-color: #f3f3f3 !important;
+  color: #1d1d1d;
+  border-radius: 20px;
+  padding: 3px 3px 3px 0;
+  transition: 0.5s ease;
 }
 
 .filterproduct .rating .ratingbox h5 {
