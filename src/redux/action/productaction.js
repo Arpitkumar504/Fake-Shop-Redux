@@ -67,3 +67,9 @@ export const rating = (value) => {
         payload: value,
     }
 }
+
+export const clearfilter = () => {
+    return {
+        type: "clear",
+    }
+}

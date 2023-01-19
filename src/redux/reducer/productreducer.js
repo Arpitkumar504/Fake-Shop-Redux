@@ -159,6 +159,20 @@ export const filterproduct = (state = filterdata, action) => {
                 ratingdata: action.payload,
             }
         }
+        case "clear": {
+            return {
+                ...state,
+                ratingdata: 5,
+                filter: {
+                    ...state.filter,
+                    name: "",
+                    category: "all",
+                    min: state.filter.min,
+                    max: state.filter.max,
+                    price: state.filter.max,
+                },
+            }
+        }
         default:
             return state;
     }

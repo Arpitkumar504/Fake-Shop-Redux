@@ -5,7 +5,7 @@ import Box from '@mui/material/Box';
 import Star from './Star';
 import { FaSearch } from 'react-icons/fa'
 import { useDispatch, useSelector } from 'react-redux';
-import { updatevalue, rating } from '../redux/action/productaction';
+import { updatevalue, rating, clearfilter } from '../redux/action/productaction';
 
 
 const Filterproduct = () => {
@@ -68,6 +68,9 @@ const Filterproduct = () => {
         <div className="pricebox">
           <Slider aria-label="Default" valueLabelDisplay="auto" value={price} min={minprice} max={maxprice} name="price" onChange={(e) => dispatch(updatevalue(e.target))} />
         </div>
+      </div>
+      <div className="clear">
+        <button type='button' onClick={() => dispatch(clearfilter())}>Clear Filter</button>
       </div>
     </div>
   )
