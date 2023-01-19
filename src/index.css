@@ -704,7 +704,8 @@ body {
 }
 
 .filterproduct .category h5,
-.filterproduct .rating h5 {
+.filterproduct .rating h5,
+.filterproduct .price h5 {
   font-size: 20px;
   font-weight: bold;
   text-align: center;
@@ -722,4 +723,17 @@ body {
 
 .filterproduct .category button.active {
   border-bottom: 2px solid black;
+}
+
+.filterproduct .rating .rate {
+  cursor: pointer;
+}
+
+.filterproduct .rating .ratingbox h5 {
+  text-align: left !important;
+}
+
+.filterproduct .pricebox {
+  width: 200px;
+  margin: 0 auto;
 }

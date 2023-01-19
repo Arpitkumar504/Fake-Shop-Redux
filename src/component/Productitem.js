@@ -9,6 +9,7 @@ const Productitem = () => {
     const filterdata = useSelector((state) => state.filterproduct.
         filterproduct);
     const sortingvalue = useSelector((state) => state.filterproduct.sortingvalue);
+    const ratingdata = useSelector((state) => state.filterproduct.ratingdata);
     let filtervalue = useSelector((state) => state.filterproduct.filter);
     const dispatch = useDispatch();
     useEffect(() => {
@@ -16,7 +17,7 @@ const Productitem = () => {
     }, [sortingvalue]);
     useEffect(() => {
         dispatch(filterdatas());
-    }, [filtervalue])
+    }, [filtervalue, ratingdata])
 
     if (griddata) {
         return (

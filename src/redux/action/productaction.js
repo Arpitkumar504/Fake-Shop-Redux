@@ -60,3 +60,10 @@ export const filterdatas = () => {
         type: "filterproduct",
     }
 }
+
+export const rating = (value) => {
+    return {
+        type: "setrating",
+        payload: value,
+    }
+}

@@ -26,18 +26,31 @@ const filterdata = {
     filterproduct: [],
     gridview: true,
     sortingvalue: "lowest",
+    ratingdata: 5,
     filter: {
         name: "",
         category: "all",
+        min: 0,
+        max: 0,
+        price: 0,
     },
 }
 export const filterproduct = (state = filterdata, action) => {
     switch (action.type) {
         case "setfilter": {
+            let priceall = action.payload.map(element => {
+                return element.price;
+            })
+            let maximumprice = Math.max.apply(null, priceall);
             return {
                 ...state,
                 alldata: [...action.payload],
                 filterproduct: [...action.payload],
+                filter: {
+                    ...state.filter,
+                    max: maximumprice,
+                    price: maximumprice,
+                },
             }
         }
         case "setsorting": {
@@ -108,7 +121,8 @@ export const filterproduct = (state = filterdata, action) => {
         }
         case "filterproduct": {
             let data = [...state.alldata];
-            const { name, category } = state.filter;
+            const { ratingdata } = state;
+            const { name, category, price } = state.filter;
             if (name) {
                 data = data.filter(element => {
                     return element.title.toLowerCase().includes(name);
@@ -119,9 +133,30 @@ export const filterproduct = (state = filterdata, action) => {
                     return element.category == category;
                 })
             }
+            if (ratingdata) {
+                data = data.filter(element => {
+                    return element.rating.rate <= ratingdata;
+                })
+            }
+            if (price == 0) {
+                data = data.filter(element => {
+                    return element.price == price;
+                })
+            }
+            else {
+                data = data.filter(element => {
+                    return element.price <= price;
+                })
+            }
             return {
                 ...state,
                 filterproduct: data,
+            }
+        }
+        case "setrating": {
+            return {
+                ...state,
+                ratingdata: action.payload,
             }
         }
         default:
