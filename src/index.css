@@ -529,6 +529,24 @@ body {
   width: 100%;
 }
 
+.singleproduct button {
+  padding: 10px 20px;
+  background-color: #1d1d1d;
+  color: #f3f3f3;
+  border-radius: 10px;
+  border: none;
+  outline: none;
+  font-weight: bold;
+  cursor: pointer;
+  display: block;
+  transition: 0.5s ease;
+}
+
+.singleproduct button:hover {
+  background-color: #f3f3f3;
+  color: #1d1d1d;
+}
+
 @media(max-width:768px) {
   .singleproduct {
     display: block;

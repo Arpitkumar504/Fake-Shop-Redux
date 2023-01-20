@@ -177,3 +177,42 @@ export const filterproduct = (state = filterdata, action) => {
             return state;
     }
 }
+
+const carts = {
+    cart: [],
+}
+export const productcart = (state = carts, action) => {
+    switch (action.type) {
+        case "addtocart": {
+            let { data, id } = action.payload;
+            let existingitem = state.cart.find(element => {
+                return element.data.id == id;
+            })
+            if (existingitem) {
+                const existing = state.cart.map(element => {
+                    if (element.data.id == id) {
+                        return {
+                            ...element,
+                            quantity: element.quantity + 1,
+                        }
+                    }
+                    else {
+                        return element;
+                    }
+                })
+                return {
+                    ...state,
+                    cart: existing,
+                }
+            }
+            else {
+                return {
+                    ...state,
+                    cart: [...state.cart, { data, quantity: 1 }],
+                }
+            }
+        }
+        default:
+            return state;
+    }
+}

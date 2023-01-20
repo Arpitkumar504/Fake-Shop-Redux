@@ -73,3 +73,12 @@ export const clearfilter = () => {
         type: "clear",
     }
 }
+
+export const addcart = (data, id) => {
+    return {
+        type: "addtocart",
+        payload: {
+            data, id,
+        }
+    }
+}

@@ -10,6 +10,7 @@ import Contact from './page/Contact.js';
 import About from './page/About.js';
 import Product from './page/Product.js';
 import Gototop from './component/Gototop.js';
+import Cart from './page/Cart.js';
 
 const App = () => {
   return (
@@ -23,6 +24,8 @@ const App = () => {
           <Route path="/about" element={<About />} />
           <Route path="/product" element={<Product />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/cart" element={<Cart />} />
+
           <Route path="*" element={<Nopage />} />
         </Routes>
         <Footer />

@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom'
 import FormatPrice from '../component/Formatprice';
 import Star from '../component/Star';
-import { setsingledata } from '../redux/action/productaction';
+import { addcart, setsingledata } from '../redux/action/productaction';
 
 const Singleproduct = () => {
   const { id } = useParams();
@@ -42,6 +42,7 @@ const Singleproduct = () => {
           </div>
         </div>
         <hr />
+        <button type='button' onClick={(e) => dispatch(addcart(datas, id))}>Add To Cart</button>
       </div>
     </div>
   )
