@@ -1,3 +1,5 @@
+import { typographyClasses } from "@mui/material"
+
 export const setproduct = (data) => {
     return {
         type: "setproducts",
@@ -80,5 +82,12 @@ export const addcart = (data, id) => {
         payload: {
             data, id,
         }
+    }
+}
+
+export const remove = (id) => {
+    return {
+        type: "removecart",
+        payload: id,
     }
 }

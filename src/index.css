@@ -825,3 +825,55 @@ body {
   background-color: #f3f3f3;
   color: #1d1d1d;
 }
+
+/* cart section */
+.cartcard {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 15px;
+}
+
+.cartcard .image img {
+  width: 80px;
+  height: 80px;
+}
+
+.cartcard .quantitybox {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.cartcard .quantitybox h5 {
+  margin: 0;
+  font-size: 22px;
+  font-weight: bold;
+}
+
+.cartcard .quantitybox .icon {
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+}
+
+.cartcard .remove {
+  width: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cartcard .remove .icon {
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+}
+
+.cartcard .price h5,
+.cartcard .subtotal h5 {
+  font-size: 22px;
+  font-weight: bold;
+  margin: 0;
+}

@@ -212,6 +212,15 @@ export const productcart = (state = carts, action) => {
                 }
             }
         }
+        case "removecart": {
+            const data = state.cart.filter(element => {
+                return element.data.id != action.payload;
+            })
+            return {
+                ...state,
+                cart: data,
+            }
+        }
         default:
             return state;
     }
