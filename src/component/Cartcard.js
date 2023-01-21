@@ -2,7 +2,7 @@ import React from 'react'
 import FormatPrice from './Formatprice'
 import { AiFillMinusCircle, AiFillPlusCircle, AiFillDelete } from 'react-icons/ai'
 import { useDispatch } from 'react-redux'
-import { remove } from '../redux/action/productaction'
+import { decrease, increase, remove } from '../redux/action/productaction'
 
 const Cartcard = ({ data: { id, price, image }, quantity }) => {
     const dispatch = useDispatch();
@@ -16,9 +16,9 @@ const Cartcard = ({ data: { id, price, image }, quantity }) => {
             </div>
             <div className="quantity">
                 <div className="quantitybox">
-                    <AiFillPlusCircle className="icon" />
+                    <AiFillPlusCircle className="icon" onClick={() => dispatch(increase(id))} />
                     <h5>{quantity}</h5>
-                    <AiFillMinusCircle className="icon" />
+                    <AiFillMinusCircle className="icon" onClick={() => dispatch(decrease(id))} />
                 </div>
             </div>
             <div className="subtotal">

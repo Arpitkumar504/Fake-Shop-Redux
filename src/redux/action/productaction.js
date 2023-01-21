@@ -91,3 +91,17 @@ export const remove = (id) => {
         payload: id,
     }
 }
+
+export const increase = (id) => {
+    return {
+        type: "increasequantity",
+        payload: id,
+    }
+}
+
+export const decrease = (id) => {
+    return {
+        type: "decreasequantity",
+        payload: id,
+    }
+}

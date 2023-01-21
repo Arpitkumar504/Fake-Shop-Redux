@@ -221,6 +221,44 @@ export const productcart = (state = carts, action) => {
                 cart: data,
             }
         }
+        case "increasequantity": {
+            const data = state.cart.map(element => {
+                if (element.data.id == action.payload) {
+                    return {
+                        ...element,
+                        quantity: element.quantity + 1,
+                    }
+                }
+                else {
+                    return element;
+                }
+            })
+            return {
+                ...state,
+                cart: data,
+            }
+        }
+        case "decreasequantity": {
+            const data = state.cart.map(element => {
+                if (element.data.id == action.payload) {
+                    let amount = element.quantity - 1;
+                    if (amount <= 0) {
+                        amount = 1;
+                    }
+                    return {
+                        ...element,
+                        quantity: amount,
+                    }
+                }
+                else {
+                    return element;
+                }
+            })
+            return {
+                ...state,
+                cart: data,
+            }
+        }
         default:
             return state;
     }
