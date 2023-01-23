@@ -1,5 +1,3 @@
-import { typographyClasses } from "@mui/material"
-
 export const setproduct = (data) => {
     return {
         type: "setproducts",
@@ -103,5 +101,23 @@ export const decrease = (id) => {
     return {
         type: "decreasequantity",
         payload: id,
+    }
+}
+
+export const clear = () => {
+    return {
+        type: "clearcart"
+    }
+}
+
+export const totalitems = () => {
+    return {
+        type: "totalitem"
+    }
+}
+
+export const totalprices = () => {
+    return {
+        type: "totalprice"
     }
 }

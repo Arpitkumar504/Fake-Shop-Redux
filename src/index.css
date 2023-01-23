@@ -36,6 +36,23 @@ body {
   height: 40px;
 }
 
+.header .navbarcart {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 10px;
+}
+
+.header .cart {
+  width: 50px;
+  margin-right: 15px;
+}
+
+.header .cart .icon {
+  font-size: 30px;
+  color: black;
+}
+
 .header .navbar {
   padding: 0;
   margin-right: 50px;
@@ -145,6 +162,14 @@ body {
 
   .content h1 {
     font-size: 10px;
+  }
+
+  .header .cart {
+    margin: 0;
+  }
+
+  .header.active .cart {
+    display: none;
   }
 }
 
@@ -839,6 +864,17 @@ body {
   height: 80px;
 }
 
+.cartcard .price,
+.cartcard .image,
+.cartcard .quantity {
+  width: 100px !important;
+}
+
+.cartcard .subtotal {
+  width: 150px;
+  text-align: center;
+}
+
 .cartcard .quantitybox {
   display: flex;
   align-items: center;
@@ -876,4 +912,92 @@ body {
   font-size: 22px;
   font-weight: bold;
   margin: 0;
+}
+
+.cart hr {
+  border: 1px solid black;
+}
+
+.cart .cartbutton {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.cart .cartbutton button {
+  padding: 10px 20px;
+  background-color: #1d1d1d;
+  color: #f3f3f3;
+  border-radius: 10px;
+  border: none;
+  outline: none;
+  font-weight: bold;
+  cursor: pointer;
+  display: block;
+  transition: 0.5s ease;
+}
+
+.cart .cartbutton a:link {
+  text-decoration: none;
+}
+
+.cart .carttotal {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.cart .carttotal .card {
+  width: 300px;
+  border-radius: 10px;
+  background-color: #f3f3f3;
+  padding: 10px;
+}
+
+.cart .carttotal .card h5 {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.cart .checkout {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  margin-bottom: 30px;
+}
+
+.cart .checkout button {
+  padding: 10px 20px;
+  background-color: #1d1d1d;
+  color: #f3f3f3;
+  border-radius: 10px;
+  border: none;
+  outline: none;
+  font-weight: bold;
+  cursor: pointer;
+  display: block;
+  transition: 0.5s ease;
+}
+
+.cartempty {
+  width: 100%;
+  margin: 200px 0;
+}
+
+.cartempty h5 {
+  font-size: 20px;
+  font-weight: bold;
+  text-align: center;
+}
+
+@media(max-width:768px) {
+  .cart .subtotal {
+    display: none;
+  }
+
+  .cart .cartcard img {
+    width: 60px;
+    height: 60px;
+  }
 }

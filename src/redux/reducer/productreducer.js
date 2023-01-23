@@ -180,6 +180,9 @@ export const filterproduct = (state = filterdata, action) => {
 
 const carts = {
     cart: [],
+    shippingfee: 100,
+    totalitem: 0,
+    totalprice: 0,
 }
 export const productcart = (state = carts, action) => {
     switch (action.type) {
@@ -257,6 +260,34 @@ export const productcart = (state = carts, action) => {
             return {
                 ...state,
                 cart: data,
+            }
+        }
+        case "clearcart": {
+            return {
+                ...state,
+                cart: [],
+            }
+        }
+        case "totalitem": {
+            const data = state.cart.reduce((initialvalue, element) => {
+                const { quantity } = element;
+                initialvalue = initialvalue + quantity;
+                return initialvalue;
+            }, 0)
+            return {
+                ...state,
+                totalitem: data,
+            }
+        }
+        case "totalprice": {
+            const data = state.cart.reduce((initialvalue, element) => {
+                const { data: { price }, quantity } = element;
+                initialvalue = initialvalue + (price * quantity);
+                return initialvalue;
+            }, 0)
+            return {
+                ...state,
+                totalprice: data,
             }
         }
         default:

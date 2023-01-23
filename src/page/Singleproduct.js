@@ -4,13 +4,14 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom'
 import FormatPrice from '../component/Formatprice';
 import Star from '../component/Star';
-import { addcart, setsingledata } from '../redux/action/productaction';
+import { addcart, setsingledata, totalitems, totalprices } from '../redux/action/productaction';
 
 const Singleproduct = () => {
   const { id } = useParams();
   const api = "https://fakestoreapi.com/products";
   const dispatch = useDispatch();
   const datas = useSelector((state) => state.product.singleproduct);
+  const cartproduct = useSelector((state) => state.productcart.cart);
   const { image, price, description, title, category, rating } = datas;
   const getsingleproduct = async (url) => {
     try {
@@ -23,6 +24,10 @@ const Singleproduct = () => {
   useEffect(() => {
     getsingleproduct(`${api}/${id}`);
   }, [id])
+  useEffect(() => {
+    dispatch(totalitems());
+    dispatch(totalprices());
+  }, [cartproduct])
   return (
     <div className='container singleproduct'>
       <div className="image">
