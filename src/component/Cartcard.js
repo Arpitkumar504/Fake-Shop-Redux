@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import FormatPrice from './Formatprice'
 import { AiFillMinusCircle, AiFillPlusCircle, AiFillDelete } from 'react-icons/ai'
 import { useDispatch } from 'react-redux'
@@ -8,9 +9,11 @@ const Cartcard = ({ data: { id, price, image }, quantity }) => {
     const dispatch = useDispatch();
     return (
         <div className='cartcard'>
-            <div className="image">
-                <img src={image} alt="#" />
-            </div>
+            <Link to={`/singleproduct/${id}`}>
+                <div className="image">
+                    <img src={image} alt="#" />
+                </div>
+            </Link>
             <div className="price">
                 <h5><FormatPrice price={price} /></h5>
             </div>
