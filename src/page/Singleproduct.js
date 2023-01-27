@@ -1,5 +1,5 @@
 import axios from 'axios';
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom'
 import FormatPrice from '../component/Formatprice';
@@ -10,6 +10,7 @@ const Singleproduct = () => {
   const { id } = useParams();
   const api = "https://fakestoreapi.com/products";
   const dispatch = useDispatch();
+  const [load, setload] = useState(false);
   const datas = useSelector((state) => state.product.singleproduct);
   const cartproduct = useSelector((state) => state.productcart.cart);
   const { image, price, description, title, category, rating } = datas;
@@ -17,6 +18,7 @@ const Singleproduct = () => {
     try {
       const data = await axios.get(url);
       dispatch(setsingledata(data.data));
+      setload(true);
     } catch (error) {
       console.log(error);
     }
@@ -47,7 +49,7 @@ const Singleproduct = () => {
           </div>
         </div>
         <hr />
-        <button type='button' onClick={(e) => dispatch(addcart(datas, id))}>Add To Cart</button>
+        {load ? <button type='button' onClick={(e) => dispatch(addcart(datas, id))}>Add To Cart</button> : null}
       </div>
     </div>
   )
