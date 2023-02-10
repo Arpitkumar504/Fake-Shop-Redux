@@ -12,7 +12,7 @@ const Footer = () => {
             <div className='footer'>
                 <div className='info footerdiv'>
                     <div className='heading'>
-                        <h5>Fakeshop</h5>
+                        <h5>Brand Junction</h5>
                     </div>
                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perspiciatis eveniet, nisi</p>
                 </div>
@@ -45,7 +45,7 @@ const Footer = () => {
                 </div>
             </div>
             <div className="copyright">
-                <h1>ArpitTech <BiCopyright /> All Right Reserved</h1>
+                <h1>Brand Junction <BiCopyright /> All Right Reserved</h1>
             </div>
         </div>
     )

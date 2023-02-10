@@ -8,8 +8,9 @@ import Hero from '../component/Hero';
 const Home = () => {
     const api = "https://fakestoreapi.com/products";
     const data = {
-        name: "Fake Shop",
+        name: "Brand Junction",
         image: './image/image3.png',
+        description: "Online Shopping Site for Fashion & Lifestyle in India. India's Fashion Expert brings you a variety of footwear, Clothing, Accessories and lifestyle products",
     }
     const dispatch = useDispatch();
     const getproducts = async (url) => {
