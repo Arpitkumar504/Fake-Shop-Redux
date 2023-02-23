@@ -6,10 +6,8 @@ import FormatPrice from '../component/Formatprice';
 import { clear, totalitems, totalprices } from '../redux/action/productaction';
 
 const Cart = () => {
-    const cartproduct = useSelector((state) => state.productcart.cart);
-    const totalprice = useSelector((state) => state.productcart.totalprice);
-    const totalitem = useSelector((state) => state.productcart.totalitem);
-    const shippingfee = useSelector((state) => state.productcart.shippingfee);
+    const cartproducts=useSelector((state)=>state.productcart);
+    const{cart:cartproduct,totalprice,totalitem,shippingfee}=cartproducts;
     const dispatch = useDispatch();
     useEffect(() => {
         dispatch(totalitems());
