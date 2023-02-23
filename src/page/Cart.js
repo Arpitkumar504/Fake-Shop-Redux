@@ -42,10 +42,10 @@ const Cart = () => {
             </div>
             <div className="carttotal">
                 <div className='card'>
-                    <h5>Subtotal: <FormatPrice price={totalprice * totalitem} /></h5>
+                    <h5>Subtotal: <FormatPrice price={totalprice} /></h5>
                     <h5>Shipping Fee: <FormatPrice price={shippingfee} /></h5>
                     <hr />
-                    <h5>Order Total: <FormatPrice price={totalprice * totalitem + shippingfee} /></h5>
+                    <h5>Order Total: <FormatPrice price={totalprice+shippingfee} /></h5>
                 </div>
             </div>
             <div className="checkout">
