@@ -7,7 +7,7 @@ import { clear, totalitems, totalprices } from '../redux/action/productaction';
 
 const Cart = () => {
     const cartproducts=useSelector((state)=>state.productcart);
-    const{cart:cartproduct,totalprice,totalitem,shippingfee}=cartproducts;
+    const{cart:cartproduct,totalprice,shippingfee}=cartproducts;
     const dispatch = useDispatch();
     useEffect(() => {
         dispatch(totalitems());
